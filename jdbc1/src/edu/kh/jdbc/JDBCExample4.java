@@ -46,7 +46,8 @@ public class JDBCExample4 {
 					+ "FROM EMPLOYEE "
 					+ "LEFT JOIN DEPARTMENT ON(DEPT_CODE = DEPT_ID) "
 					+ "NATURAL JOIN JOB "
-					+ "WHERE DEPT_TITLE = '"+ deptTitle +"' "
+					+ "WHERE DEPT_TITLE = '"
+					+ deptTitle +"' "
 					+ "ORDER BY JOB_CODE";
 			
 			// SQL에서 문자열 값을 인식하기 위해서는 
