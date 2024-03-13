@@ -45,4 +45,23 @@ public class DepartmentSeviceImpl  implements DepartmentService{
 		return deptList;
 	}
 	
+	
+	// 부서 추가 서비스
+	@Override
+	public int insertDepartment(Department dept) {
+		
+		// 1. 커넥션 얻어오기
+		Connection conn = getConnection();
+		
+		// 2. DAO 메서드 호출 후 결과 반환 받기
+		// (DAO 메서드 수행 시 커넥션이 필요하기 때문에 매개변수로 전달!)
+		int result = dao.insertDepartment(conn, dept);
+		
+		// 3. DAO 수행 결과에 따라 트랜잭션 제어
+		
+		
+		
+		return 0;
+	}
+	
 }

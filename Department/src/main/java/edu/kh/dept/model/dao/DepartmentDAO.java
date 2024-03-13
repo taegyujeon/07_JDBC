@@ -14,5 +14,7 @@ public interface DepartmentDAO {
 	 * @throws SQLException
 	 */
 	List<Department> selectAll(Connection conn) throws SQLException;
+
+	int insertDepartment(Connection conn, Department dept) throws SQLException;
 	
 }
