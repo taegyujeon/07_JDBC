@@ -1,12 +1,11 @@
 package edu.kh.dept.controller;
 
 import java.io.IOException;
-import java.sql.Connection;
 import java.util.List;
 
-import edu.kh.dept.common.JDBCTemplate;
 import edu.kh.dept.model.dto.Department;
 import edu.kh.dept.model.service.DepartmentService;
+import edu.kh.dept.model.service.DepartmentServiceImpl;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;

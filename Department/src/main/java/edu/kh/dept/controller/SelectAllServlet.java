@@ -5,7 +5,7 @@ import java.util.List;
 
 import edu.kh.dept.model.dto.Department;
 import edu.kh.dept.model.service.DepartmentService;
-import edu.kh.dept.model.service.DepartmentSeviceImpl;
+import edu.kh.dept.model.service.DepartmentServiceImpl;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -25,7 +25,7 @@ public class SelectAllServlet extends HttpServlet{
 		try {
 			
 			// Service 객체 생성
-			DepartmentService service = new DepartmentSeviceImpl();
+			DepartmentService service = new DepartmentServiceImpl();
 			
 			// 모든 부서 조회 Service 호출 후 결과 반환 받기
 			List<Department> deptList = service.selectAll();
