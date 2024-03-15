@@ -203,8 +203,70 @@ public class DepartmentDAOImpl implements DepartmentDAO{
 	}
 	
 	
+	// 부서명 검색
+	@Override
+	public List<Department> searchDepartment(Connection conn, String keyword) throws SQLException{
+		
+		// 결과를 저장할 변수/객체 생성
+		List<Department> deptList = new ArrayList<Department>();
+		
+		try {
+			// SQL 얻어오기
+			String sql = prop.getProperty("searchDepartment");
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1,keyword);
+			
+			// SQL(SELECT) 수행 후 결과(ResultSet) 반환 받기
+			rs = pstmt.executeQuery();
+			
+			// 조회 결과를 한 행씩 접근해서 컬럼 값 모두 얻어오기
+			while(rs.next()) {
+				String deptId 		= rs.getString(1); // 조회 결과 컬럼 순서 (1번 컬럼)
+				String deptTitle 	= rs.getString(2); // 조회 결과 컬럼 순서 (2번 컬럼)
+				String locationId = rs.getString(3); // 조회 결과 컬럼 순서 (3번 컬럼)
+				
+				Department dept = new Department(deptId, deptTitle, locationId);
+				
+				// deptList에 추가
+				deptList.add(dept);
+			}
+			
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return deptList;
+	}
 	
 	
 	
 	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
