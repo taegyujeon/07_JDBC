@@ -36,6 +36,66 @@ SELECT * FROM TB_TODO;
 
 COMMIT;
 
+-- 할 일 목록 조회
+SELECT TODO_NO, TODO_TITLE, COMPLETE,
+	TO_CHAR(REG_DATE,'YYYY-MM-DD HH24,:MI:SS') REG_DATE  
+FROM TB_TODO
+ORDER BY TODO_NO;
+
+
+-- 특정 할 일 상세 조회
+SELECT TODO_NO, TODO_TITLE, TODO_CONTENT, COMPLETE,
+	TO_CHAR(REG_DATE,'YYYY-MM-DD HH24,:MI:SS') REG_DATE  
+FROM TB_TODO
+WHERE TODO_NO = 1;
+
+
+-- 특정 할 일의 완료 여부 수정
+UODATE TB_TODO
+SET COMPLETE 'Y'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

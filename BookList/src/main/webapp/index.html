@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookList</title>
+</head>
+<body>
+    <h1>BookList</h1>
+
+    <hr>
+
+    <h3>전체 도서 리스트</h3>
+
+    <ul>
+        <li>
+            <a href="/bookList/selectAll">전체 도서 조회</a>
+        </li>
+
+        <li>
+            <a href="/bookList/insert">도서 추가</a>
+        </li>
+    </ul>
+
+    <hr>
+
+    <h3>도서명으로 검색</h3>
+
+    <form action="/bookList/search" method="GET">
+        검색어 입력:
+        <input type="text" name="keyword">
+        <button>검색</button>
+    </form>
+
+    <h3>카테고리로 검색</h3>
+    <form action="/bookList/searchByCategory" method="GET">
+        <input type="radio" name="category" value="프로그래밍"> 프로그래밍
+        <input type="radio" name="category" value="소설"> 소설
+        <input type="radio" name="category" value="자기계발"> 자기계발
+        <input type="radio" name="category" value="역사"> 역사
+        <input type="radio" name="category" value="스포츠"> 스포츠
+        
+        <button type="submit">검색</button>
+    </form>
+
+
+    
+</body>
+</html>

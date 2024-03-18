@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+
+	<!-- 전체 도서 조회 -->
+	<entry key="selectAll">
+		SELECT * FROM TB_BOOK
+		ORDER BY BOOK_NO ASC 
+	</entry>
+	
+	
+</properties>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
