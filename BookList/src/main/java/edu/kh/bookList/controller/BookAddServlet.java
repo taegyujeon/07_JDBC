@@ -11,7 +11,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.websocket.Session;
+import jakarta.servlet.http.HttpSession;
 
 @WebServlet("/bookList/add")
 public class BookAddServlet extends HttpServlet{
@@ -29,15 +29,16 @@ public class BookAddServlet extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		try {
+		  // 서비스 객체 생성
+			BookService service = new BookServiceImpl();
 			
-			BookService sevice = new BookServiceImpl();
-			
-			String bookNo = req.getParameter("bookNo");
+		  // 파라미터 얻어오기
+			int bookNo = Integer.parseInt(req.getParameter("bookNo"));
 			String bookTitle = req.getParameter("bookTitle");
 			String bookAuthor = req.getParameter("bookAuthor");
 			String bookPublisher = req.getParameter("bookPublisher");
 			String category = req.getParameter("category");
-			String stock = req.getParameter("stock");
+			int stock = Integer.parseInt(req.getParameter("stock"));
 			
 			Book book = new Book(bookNo, bookTitle, bookAuthor, bookPublisher, category, stock);
 			
@@ -45,10 +46,13 @@ public class BookAddServlet extends HttpServlet{
 			
 			String message = null;
 			
+			HttpSession session = req.getSession();
+			
 			if(result > 0) 	message = "도서 추가 성공!!";
 			else						message = "도서 추가 실패...";
 			
-			Session.setAttribute("message", message);
+			
+			session.setAttribute("message", message);
 			
 			resp.sendRedirect("/bookList/selectAll");
 			

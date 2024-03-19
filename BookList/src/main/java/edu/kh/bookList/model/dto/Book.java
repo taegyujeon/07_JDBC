@@ -24,8 +24,6 @@ public class Book {
 	}
 	
 	
-
-
 	// getter / setter
 	public int getBookNo() {
 		return bookNo;

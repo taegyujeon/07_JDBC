@@ -10,75 +10,36 @@
 
     <h1>도서 추가</h1>
 
-    <%-- 주소에서 절대/상대 경로
-    
-    주소 형태 : http://IP주소(도메인):PORT/요청주소
-
-    ex) 현재 페이지 주소 : http://localhost/department/insert (GET)
-
-
-    절대 경로: PORT 번호 뒤에 '/'부터 요청하려는 주소를 모두 작성
-               /department/insert
-    상대 경로: 주소 제일 마지막 경로 부터 원하는 요청 주소까지를 작성
-               insert
-    --%>
 
     <form action="add" method="POST">
 
         <div>
-        부서 코드(DEPT_ID) : <input type="text" name="">
+        도서 번호 : <input type="text" name="bookNo">
         </div>
 
         <div>
-        부서 이름(DEPT_TITLE) : <input type="text" name="deptTitle">
+        도서 제목 : <input type="text" name="bookTitle">
         </div>
 
         <div>
-        지역 코드(LOCATION_ID) : <input type="text" name="locationId">
+        저자 : <input type="text" name="bookAuthor">
+        </div>
+
+        <div>
+        출판사 : <input type="text" name="bookPublisher">
+        </div>
+
+        <div>
+        카테고리 : <input type="text" name="category">
+        </div>
+
+        <div>
+        재고수량 : <input type="text" name="stock">
         </div>
 
         <%-- button의 type 기본값은 submit --%>
         <button type="submit">추가 하기</button>
     </form>
-
-      <hr><hr><hr>
-
-    <h1>여러 부서 한 번에 추가 하기</h1>
-    <form action="/department/multiInsert" method="post" name="multiInsertForm">
-        
-        <button type="button" id="addBtn">입력 추가</button>
-
-        <table>
-        <thead>
-            <tr>
-            <th>부서 코드</th>
-            <th>부서명</th>
-            <th>지역 코드</th>
-            <th>삭제버튼</th>
-            </tr>
-        </thead>
-
-        <tbody id="tbody">
-            <tr>
-            <td>
-                <input type="text" name="deptId">
-            </td>
-            <td>            <input type="text" name="deptTitle">
-            </td>
-            <td>
-                <input type="text" name="locationId">
-            </td>
-            <th>
-                <button type="button" class="remove-btn">삭제</button>
-            </th>
-            </tr>
-        </tbody>
-        </table>
-
-        <button>부서 추가 하기</button>
-    </form>
-
-    <script src="/resources/js/insert.js"></script>
     
 </body>
 </html>

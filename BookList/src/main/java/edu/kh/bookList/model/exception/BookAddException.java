@@ -1,15 +1,16 @@
 package edu.kh.bookList.model.exception;
 
-public class BookAddException {
+public class BookAddException extends RuntimeException{
 	public BookAddException(){
 		
-		super("도서 추가(ADD) 중 예외 발생(제약 조건 위배)");
+		super("도서 추가 중 어딘가 문제가 있음");
 		
 	}
 	
 	public BookAddException(String message) {
 		super(message);
 	}
+
 	
 }
 

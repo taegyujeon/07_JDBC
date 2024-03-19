@@ -8,6 +8,24 @@
 		ORDER BY BOOK_NO ASC 
 	</entry>
 	
+	<!-- 도서 추가 -->
+	<entry key="addBook">
+		INSERT INTO TB_BOOK
+		VALUES(?,?,?,?,?,?)
+	</entry>	
+	
+	<!-- 도서명 검색 -->
+	<entry key = "searchBook">
+		SELECT * FROM TB_BOOK
+		WHERE BOOK_TITLE LIKE '%' || ? || '%'
+	</entry>
+	
+	<!-- 카테고리 검색 -->
+	<entry key = "searchByCategory">
+	SELECT * FROM TB_BOOK 
+	WHERE BOOK_CATE = ?
+	</entry>
+	
 	
 </properties>
 
